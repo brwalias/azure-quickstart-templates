@@ -3,13 +3,25 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "existingVNETName": {
-      "value": "existinVNET"
+      "value": "MyVnet"
     },
     "newSubnetName": {
       "value": "newSubnet"
     },
     "newSubnetAddressPrefix": {
-      "value": "10.0.0.0/24"
+      "value": "10.2.1.0/24"
+    },
+    "newSubnetName2": {
+      "value": "newSubnet3"
+    },
+    "newSubnetAddressPrefix2": {
+      "value": "10.2.2.0/24"
+    },
+    "newSubnetName3": {
+      "value": "newSubnet4"
+    },
+    "newSubnetAddressPrefix3": {
+      "value": "10.2.3.0/24"
     }
   }
 }

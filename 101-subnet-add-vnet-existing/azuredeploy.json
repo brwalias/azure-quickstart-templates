@@ -20,6 +20,32 @@
       "metadata": {
         "description": "Address space of the subnet to add"
       }
+    },
+    "newSubnetName2": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the subnet to add"
+      }
+    },
+    "newSubnetAddressPrefix2": {
+      "type": "string",
+      "defaultValue": "10.0.0.0/24",
+      "metadata": {
+        "description": "Address space of the subnet to add"
+      }
+    },
+    "newSubnetName3": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the subnet to add"
+      }
+    },
+    "newSubnetAddressPrefix3l": {
+      "type": "string",
+      "defaultValue": "10.0.0.0/24",
+      "metadata": {
+        "description": "Address space of the subnet to add"
+      }
     }
   },
   "variables": {
@@ -34,7 +60,31 @@
       "properties": {
         "addressPrefix": "[parameters('newSubnetAddressPrefix')]"
       }
+      },
+
+      {
+        "apiVersion": "[variables('apiVersion')]",
+        "type": "Microsoft.Network/virtualNetworks/subnets",
+        "name": "[concat(parameters('existingVNETName'), '/', parameters('newSubnetName2'))]",
+        "location": "[resourceGroup().location]",
+        "properties": {
+        "addressPrefix": "[parameters('newSubnetAddressPrefix2')]"
+         
+      }
+
+    },
+    {
+        "apiVersion": "[variables('apiVersion')]",
+        "type": "Microsoft.Network/virtualNetworks/subnets",
+        "name": "[concat(parameters('existingVNETName'), '/', parameters('newSubnetName3'))]",
+        "location": "[resourceGroup().location]",
+        "properties": {
+        "addressPrefix": "[parameters('newSubnetAddressPrefix3')]"
+         
+      }
+
     }
+
   ],
   "outputs": {}
 }
